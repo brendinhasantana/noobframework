@@ -1,0 +1,38 @@
+<?php
+session_start();
+    // Adiciona o texto à lista de notas
+    if (!empty($texto)) {
+        $_SESSION['notas'][] = $texto;
+    }
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notas</title>
+</head>
+<body>
+    <h1>Notas</h1>
+    <form method="POST" action="">
+        <textarea name="texto" rows="4" cols="50"></textarea>
+        <br>
+        <input type="submit" value="Adicionar Nota">
+    </form>
+
+    <h2>Listagem de Notas</h2>
+    <ul>
+        <?php
+        // Exibe as notas na ordem inversa (do mais recente para o mais antigo)
+        if (isset($_SESSION['notas'])) {
+            $notas = array_reverse($_SESSION['notas']);
+            foreach ($notas as $nota) {
+                echo "<li>$nota</li>";
+            }
+        }
+        ?>
+    </ul>
+    <form method="POST" action="index">
+        <input type="submit" value="Logout">
+    </form>
+</body>
+</html>
