@@ -9,4 +9,3 @@ class indexController extends Controller {
         $this->view('login');
     }
 }
-    
