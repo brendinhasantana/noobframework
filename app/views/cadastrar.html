@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    body{
+        background-color: black;
+    }
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color:#B0E0E6 ;
+        padding: 2rem;
+        margin: 15rem;
+        font-size: 1.2rem;
+        font-family: Georgia ;
+    }
+
+    .register {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .register input {
+        background-color: #4682B4;
+        color: antiquewhite;
+        font-weight: bold;
+        border-radius: 1rem;
+        width: 60%;
+    }
+</style>
+<body>
+    
+    <div class="main">
+        <h1 class="login" align="center">Cadastrar-se</h1>
+        <form class="frmlogin" action="/session/gravarUser" method="post">
+            <p><input type="text" name="name" placeholder="Nome" class="Nome" required></p>
+            <p><input type="email" name="email" placeholder="Email" class="email" required></p>
+            <p><input type="password" name="password" placeholder="Senha" class="pass" required></p>
+            <div class="register">
+                <input type="submit" value="Cadastrar-se" class="submit">
+                <a href="/">Voltar</a>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
